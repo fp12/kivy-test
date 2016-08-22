@@ -1,0 +1,17 @@
+#:kivy 1.9.1
+#:import math math
+
+<Hexagon>:
+    canvas:
+        Color:
+            rgb: 1 * abs(self.q), 1 * abs(self.r), 1 * abs(-self.q-self.r)
+        Mesh:
+            vertices: (self.center_x + math.cos(math.pi/3 * 0) * self.radius, self.center_y + math.sin(math.pi/3 * 0) * self.radius, 0, 0, self.center_x + math.cos(math.pi/3 * 1) * self.radius, self.center_y + math.sin(math.pi/3 * 1) * self.radius, 0, 0, self.center_x + math.cos(math.pi/3 * 2) * self.radius, self.center_y + math.sin(math.pi/3 * 2) * self.radius, 0, 0, self.center_x + math.cos(math.pi/3 * 3) * self.radius, self.center_y + math.sin(math.pi/3 * 3) * self.radius, 0, 0, self.center_x + math.cos(math.pi/3 * 4) * self.radius, self.center_y + math.sin(math.pi/3 * 4) * self.radius, 0, 0, self.center_x + math.cos(math.pi/3 * 5) * self.radius, self.center_y + math.sin(math.pi/3 * 5) * self.radius, 0, 0)
+            indices: (0, 1, 2, 3, 4, 5)
+            mode: "triangle_fan"
+        Color:
+            rgb: 0.5, 0.5, 0.5
+        Mesh:
+            vertices: (self.center_x + math.cos(math.pi/3 * 1) * self.radius, self.center_y + math.sin(math.pi/3 * 1) * self.radius, 0, 0, self.center_x + math.cos(math.pi/3 * 2) * self.radius, self.center_y + math.sin(math.pi/3 * 2) * self.radius, 0, 0, self.center_x + math.cos(math.pi/3 * 2) * (self.radius - self.front_radius), self.center_y + math.sin(math.pi/3 * 2) * (self.radius - self.front_radius), 0, 0, self.center_x + math.cos(math.pi/3 * 1) * (self.radius - self.front_radius), self.center_y + math.sin(math.pi/3 * 1) * (self.radius - self.front_radius), 0, 0)
+            indices: (0, 1, 2, 3)
+            mode: "triangle_fan"
